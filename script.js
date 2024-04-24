@@ -6,13 +6,11 @@ async function fetchNews(){
         const response = await fetch(url);
         const data = await response.json();
         console.log(data);
-        showNews(data);
+        showNews(data.articles);
     } catch(error){
         console.error('There was an error!', error);
     }
 }
-
-fetchNews();
 
 function showNews(articles){
     const newsDiv = document.querySelector('#news');
@@ -36,7 +34,7 @@ function showNews(articles){
             articleDiv.appendChild(image);
         }
 
-        const link =document.createElement('a');
+        const link = document.createElement('a');
         link.href = article.url;
         link.textContent = 'Read More';
         articleDiv.appendChild(link);
@@ -45,3 +43,5 @@ function showNews(articles){
 
     }
 }
+
+fetchNews();
