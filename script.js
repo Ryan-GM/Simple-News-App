@@ -11,3 +11,25 @@ async function fetchNews(){
         console.error('There was an error!', error);
     }
 }
+
+fetchNews();
+
+function showNews(articles){
+    const newsDiv = document.querySelector('#news');
+    for(const article of articles){
+        const articleDiv = document.createElement('div');
+
+        // create and append a headline to the articleDiv
+        const title = document.createElement('h4');
+        title.textContent = article.title;
+        articleDiv.appendChild(title);
+
+        // use document.createElement and appendChild
+        const description = document.createElement('p');
+        description.textContent = article.description;
+        articleDiv.appendChild(description);
+
+
+
+    }
+}
