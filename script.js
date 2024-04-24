@@ -29,7 +29,19 @@ function showNews(articles){
         description.textContent = article.description;
         articleDiv.appendChild(description);
 
+        if(article.urlToImage){
+            const image = document.createElement('img');
+            image.src = article.urlToImage;
+            image.alt = article.title;
+            articleDiv.appendChild(image);
+        }
 
+        const link =document.createElement('a');
+        link.href = article.url;
+        link.textContent = 'Read More';
+        articleDiv.appendChild(link);
+
+        newsDiv.appendChild(articleDiv);
 
     }
 }
