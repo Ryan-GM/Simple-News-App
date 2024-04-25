@@ -1,5 +1,5 @@
 const apiKey = process.env.NEWS_API_KEY;
-const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+const baseUrl = 'https://newsapi.org/v2/top-headlines';
 let currentPage = 1;
 let searchQuery = '';
 let category = '';
