@@ -27,7 +27,7 @@ function showNews(articles){
         // appending a card-body
         const cardBody = document.createElement('div');
         cardBody.className = 'card-body';
-        articleDiv.appendChild(cardBody);
+        
 
         // create and append a headline to the articleDiv
         const title = document.createElement('h4');
@@ -55,8 +55,31 @@ function showNews(articles){
         link.className = 'btn btn-danger';
         cardBody.appendChild(link);
 
+        articleDiv.appendChild(cardBody);
         newsDiv.appendChild(articleDiv);
 
+    }
+}
+
+function handleSearch(){
+    searchQuery = document.getElementById('searchInput').value;
+    fetchNews();
+}
+
+function handleCategoryFilter(selectedCategory){
+    category = selectedCategory;
+    fetchNews();
+}
+
+function nextPage(){
+    currentPage++;
+    fetchNews();
+}
+
+function prevPage(){
+    if(currentPage > 1){
+        currentPage--;
+        fetchNews();
     }
 }
 
